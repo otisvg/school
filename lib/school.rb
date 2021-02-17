@@ -7,4 +7,8 @@ class School
   def register(student)
     students << student.name
   end
+
+  def assign_to_classroom(student)
+
+  end
 end
