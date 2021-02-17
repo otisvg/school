@@ -1,5 +1,3 @@
-require "student"
-
 describe "user stories" do
   let(:student) { Student.new(name: "Beca Galliano") }
   let(:school) { School.new }
