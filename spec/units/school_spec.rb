@@ -1,9 +1,8 @@
 require "school"
 
 describe School do
-
-  let(:name) {"Beca Galliano"}
-  let(:student) { double(:student, name: name)}
+  let(:name) { "Beca Galliano" }
+  let(:student) { double(:student, name: name) }
   let(:school) { described_class.new }
 
   describe "#register" do
