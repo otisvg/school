@@ -1,0 +1,5 @@
+.DS_Store
+coverage/**/*
+.rubocop-upgraded.yml
+analysis/**/*
+.rubocop-*
