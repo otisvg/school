@@ -13,8 +13,8 @@ I want to be able to join a school
 ```
 ```
 As head teacher
-So I can register students to my school
-I want a list of students
+So I can see students registered at my school
+I want to see a list of students names
 ```
 ```
 As head teacher

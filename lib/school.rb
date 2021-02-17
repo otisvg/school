@@ -5,6 +5,6 @@ class School
   end
 
   def register(student)
-    students << student
+    students << student.name
   end
 end
