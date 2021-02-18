@@ -8,7 +8,7 @@ class School
     students << student.name
   end
 
-  def assign_to_classroom(student)
-
+  def assign_to_clazs(clazs, student)
+    
   end
 end

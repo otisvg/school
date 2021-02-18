@@ -1,6 +1,6 @@
 describe "user stories" do
-  let(:lesson) { "Maths" }
-  let(:classroom) { Classroom.new(lesson: lesson) }
+  
+  let(:clazs) { Clazs.new(name: "Maths") }
   let(:student) { Student.new(name: "Beca Galliano") }
   let(:school) { School.new }
 
@@ -14,9 +14,9 @@ describe "user stories" do
     expect(school.students).to eq ["Beca Galliano"]
   end
 
-  it "students can be asigned to a classroom" do
+  it "students can be asigned to a clazs" do
     school.register(student)
-    school.assign_to_classroom(student)
-    expect{ classroom.students.length }.not_to raise_error
+    school.assign_to_clazs(clazs, student)
+    expect{ clazs.students.length }.not_to raise_error
   end
 end
