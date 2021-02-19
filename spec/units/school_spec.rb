@@ -10,7 +10,11 @@ describe School do
   describe "#add_clazs" do
     it "adds a clazs to the school" do
       expect(clazs).to receive(:create).at_most(1).times
-      school.add_clazs()
+      school.add_clazs(clazs, "Maths")
+    end
+    it "adds a clazs to the school" do 
+      school.add_clazs(clazs, "Maths")
+      expect(school.clazses.first).to eq lesson
     end
   end
 
@@ -36,3 +40,12 @@ describe School do
     end
   end
 end
+
+# student = Student.new
+# school.register(student)
+
+# clazs = Class.new 
+# #School
+# school.add_clazs(clazs)
+
+# #push 

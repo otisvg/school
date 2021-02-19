@@ -7,8 +7,8 @@ class School
     @clazses = []
   end
 
-  def add_clazs(lesson)
-    clazses << Clazs.create(lesson)
+  def add_clazs(clazs, subject)
+    clazses << clazs.create(subject)
   end
 
   def register(student)
