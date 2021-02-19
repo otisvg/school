@@ -12,6 +12,17 @@ As a student
 So I can attend school
 I want to be able to join a school
 ```
+```
+As head teacher
+So I can enable learning
+I want to be able to add classes to my school
+```
+```
+As head teacher
+So I can helps students learn
+I want to be able to add students to lessons
+```
+
 ## PARTIALLY DONE - need method to view @students array
 ```
 As head teacher
@@ -19,11 +30,7 @@ So I can see students registered at my school
 I want to see a list of students names
 ```
 ## IN PROGRESS
-```
-As head teacher
-So I can helps students learn
-I want to be able to add students to lessons
-```
+
 ## TODO
 ```
 As a teacher
