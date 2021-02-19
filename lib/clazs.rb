@@ -1,17 +1,16 @@
 class Clazs
-  attr_reader :students, :lesson
+  attr_reader :students, :lesson, :create
 
   def initialize
     @lesson = {}
-    @students = []
   end
 
   def create(subject)
-    lesson[subject] = students
+    lesson[subject] = []
     lesson
   end
 
-  def add(student)
-    students << student
+  def add(student, subject)
+    lesson[subject] << student
   end
 end

@@ -21,7 +21,7 @@ describe "user stories" do
 
   it "students can be asigned to a clazs" do
     school.register(student)
-    school.assign_to_clazs(clazs, student)
-    expect{ clazs.students.length }.not_to raise_error
+    school.assign_to_clazs(clazs, "Maths", student)
+    expect{ clazs.lesson.length }.not_to raise_error
   end
 end
