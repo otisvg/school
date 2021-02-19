@@ -1,8 +1,12 @@
 describe "user stories" do
-  
-  let(:clazs) { Clazs.new(name: "Maths") }
+  let(:clazs) { Clazs.new }
   let(:student) { Student.new(name: "Beca Galliano") }
   let(:school) { School.new }
+
+  it "adds a clazs to the school" do
+    school.add_clazs("Maths")
+    expect(school.clazses.length).to eq 1
+  end
 
   it "a student can join a school" do
     school.register(student)

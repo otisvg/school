@@ -1,7 +1,14 @@
+require "clazs"
+
 class School
-  attr_reader :students
+  attr_reader :students, :clazses
   def initialize
     @students = []
+    @clazses = []
+  end
+
+  def add_clazs(lesson)
+    clazses << Clazs.create(lesson)
   end
 
   def register(student)

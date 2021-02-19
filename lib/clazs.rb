@@ -1,9 +1,14 @@
 class Clazs
-  attr_reader :students
+  attr_reader :students, :lesson
 
-  def initialize(name:)
-    @name = name 
+  def initialize
+    @lesson = {}
     @students = []
+  end
+
+  def create(subject)
+    lesson[subject] = students
+    lesson
   end
 
   def add(student)

@@ -1,10 +1,17 @@
 require "clazs"
 
 describe Clazs do
-  let(:name) { "Maths" }
-  let(:clazs) { described_class.new(name: name) }
+  let(:lesson) { "Maths" }
+  let(:clazs) { described_class.new }
   let(:student) { double(:student) }
   
+  describe "#create" do
+    it "creates a new clazs returning a hash" do
+      new_clazs = {"Maths" => [] }
+      expect(clazs.create(lesson)).to eq new_clazs
+    end
+  end
+
   describe "#add" do
     it "adds a student to the clazs" do
       clazs.add(student)
