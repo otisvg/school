@@ -1,16 +1,16 @@
 School
 ========
 
-### Requirments:
+### Requirements:
 
 A client has asked for a program to help add students to their school and asign them to lessons.
-A student can join a lesson but only if the lesson is not full and have a teacher.
+A student can join a lesson but only if the lesson is not full and has a teacher.
 
 ## DONE
 ```
 As a student
 So I can attend school
-I want to be able to join a school
+I want to be able to join a schools
 ```
 ```
 As head teacher
