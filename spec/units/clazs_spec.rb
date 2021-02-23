@@ -8,8 +8,9 @@ describe Clazs do
   
   describe "#create" do
     it "creates a new clazs returning a hash" do
-      new_clazs = {subject => [] }
-      expect(clazs.create(subject)).to eq new_clazs
+      lesson = {:subject => "Maths", :students => [] }
+      maths = clazs.create(subject)
+      expect(maths).to eq lesson
     end
   end
 
@@ -17,7 +18,8 @@ describe Clazs do
     it "adds a student to the clazs" do
       clazs.create(subject)
       clazs.add(student, subject)
-      expect(clazs.lesson[subject].first).to eq student
+      first_student = clazs.lesson[:students].first
+      expect(first_student).to eq student
     end
   end
 end
