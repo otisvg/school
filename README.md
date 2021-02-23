@@ -53,6 +53,11 @@ So I can improve my knowledge
 I want to gain xp when attending classes
 ```
 
+The code will defend against edge cases such as:
+* Only a registered student can be assigned to classes
+* Only a student in a class can be removed
+* Only one instance of the class can be made
+
 ## Planning
 
 * After creating the user stories we planned the basic structure of the code, breaking down each user story into classes and methods by extracting the nouns and verbs. For readablilty and to simplify the code we decided to start with 3 classes: School, Student, Clazs.
