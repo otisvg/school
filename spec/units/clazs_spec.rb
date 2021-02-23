@@ -24,4 +24,14 @@ describe Clazs do
       expect(first_student).to eq student
     end
   end
+
+  describe "#remove" do
+    it "removes a student from the clazs" do
+      clazs.create(subject)
+      clazs.add(student, subject)
+      clazs.remove(student, subject)
+      empty_clazs = clazs.lesson[:students]
+      expect(empty_clazs).to eq []
+    end
+  end 
 end

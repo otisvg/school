@@ -15,15 +15,26 @@ describe "user stories" do
     expect(school.students.length).to eq 1
   end
 
-  it 'a headteacher can see a list of students names' do
-    school.register(student)
-    expect(school.students).to eq ["Beca Galliano"]
-  end
+  context "when a student is registered" do
+    before(:each) do
+      school.register(student)
+    end
 
-  it "students can be asigned to a clazs" do
-    school.register(student)
-    school.add_clazs(clazs, subject)
-    school.assign_to_clazs(clazs, subject, student)
-    expect{ clazs.lesson.length }.not_to raise_error
+    it 'a headteacher can see a list of students names' do
+      expect(school.students).to eq ["Beca Galliano"]
+    end
+
+    it "students can be asigned to a clazs" do
+      school.add_clazs(clazs, subject)
+      school.assign_to_clazs(clazs, subject, student)
+      expect{ clazs.lesson.length }.not_to raise_error
+    end
+
+    it "removes students from a clazs" do
+      school.add_clazs(clazs, subject)
+      school.assign_to_clazs(clazs, subject, student)
+      school.remove_student(clazs, subject, student) 
+      expect( clazs.lesson[:students] ).to eq []
+    end
   end
 end

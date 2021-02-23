@@ -4,8 +4,6 @@ class Clazs
   def initialize
     @lesson = {}
   end
-  # {"Maths" => []}
-  # {:subject => "Maths", :students => []}
 
   def create(subject)
     lesson[:subject] = subject
@@ -15,5 +13,9 @@ class Clazs
 
   def add(student, subject)
     lesson[:students] << student
+  end
+
+  def remove(student, subject)
+    lesson[:students].delete(student)
   end
 end

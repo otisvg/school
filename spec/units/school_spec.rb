@@ -20,27 +20,37 @@ describe School do
     end
   end
 
-  describe "#register" do
-    it "registers students to school" do
+  context "when a student is registered" do
+    before(:each) do
       school.register(student)
-      students = school.students.length
-      expect(students).to eq 1
     end
-  end
 
-  describe "#students" do
-    it 'displays a list of students names' do 
-      school.register(student)
-      first_student = school.students.first
-      expect(first_student).to eq "Beca Galliano"
+    describe "#register" do
+      it "registers students to school" do
+        students = school.students.length
+        expect(students).to eq 1
+      end
     end
-  end
 
-  describe "#assign_to_clazs" do
-    it "assigns students to clazs" do
-      school.register(student)
-      expect(clazs).to receive(:add).at_most(1).times
-      school.assign_to_clazs(clazs, "Maths", student)
+    describe "#students" do
+      it 'displays a list of students names' do 
+        first_student = school.students.first
+        expect(first_student).to eq "Beca Galliano"
+      end
+    end
+
+    describe "#assign_to_clazs" do
+      it "assigns students to clazs" do
+        expect(clazs).to receive(:add).at_most(1).times
+        school.assign_to_clazs(clazs, "Maths", student)
+      end
+    end
+
+    describe "#remove_student" do
+      it "removes a student from the clazs" do
+        expect(clazs).to receive(:remove).at_most(1).times
+        school.remove_student(clazs, subject, student)
+      end
     end
   end
 end

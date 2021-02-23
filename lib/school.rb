@@ -18,4 +18,8 @@ class School
   def assign_to_clazs(clazs, subject, student)
     clazs.add(student, subject)
   end
+
+  def remove_student(clazs, subject, student)
+    clazs.remove(student, subject)
+  end
 end
