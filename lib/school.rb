@@ -1,5 +1,3 @@
-require "clazs"
-
 class School
   attr_reader :students, :clazses
   def initialize

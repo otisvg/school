@@ -8,7 +8,7 @@ describe Clazs do
   
   describe "#create" do
     it "creates a new clazs returning a hash" do
-      lesson = {:subject => "Maths", :students => [] }
+      lesson = { :subject => "Maths", :students => [] }
       maths = clazs.create(subject)
       expect(maths).to eq lesson
     end
