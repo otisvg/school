@@ -19,6 +19,8 @@ describe Clazs do
       clazs.create(subject)
       clazs.add(student, subject)
       first_student = clazs.lesson[:students].first
+      maths = clazs.lesson[:subject]
+      expect(maths).to eq subject
       expect(first_student).to eq student
     end
   end

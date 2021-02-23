@@ -15,21 +15,24 @@ describe School do
 
     it "adds a clazs to the school" do 
       school.add_clazs(clazs, "Maths")
-      expect(school.clazses.first).to eq lesson
+      maths = school.clazses.first
+      expect(maths).to eq lesson
     end
   end
 
   describe "#register" do
     it "registers students to school" do
       school.register(student)
-      expect(school.students.length).to eq 1
+      students = school.students.length
+      expect(students).to eq 1
     end
   end
 
   describe "#students" do
     it 'displays a list of students names' do 
       school.register(student)
-      expect(school.students.first).to eq "Beca Galliano"
+      first_student = school.students.first
+      expect(first_student).to eq "Beca Galliano"
     end
   end
 
