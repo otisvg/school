@@ -22,6 +22,11 @@ As head teacher
 So I can helps students learn
 I want to be able to add students to lessons
 ```
+```
+As a teacher
+So I can kick out naughty students
+I want to be able to remove students from my classes
+```
 
 ### PARTIALLY DONE - need method to view @students array
 ```
@@ -36,11 +41,6 @@ I want to see a list of students names
 As a teacher
 So I can teach lessons
 I want to be asigned to a lesson
-```
-```
-As a teacher
-So I can kick out naughty students
-I want to be able to remove students from my classes
 ```
 ```
 As a headteacher
