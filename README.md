@@ -22,6 +22,11 @@ As head teacher
 So I can helps students learn
 I want to be able to add students to lessons
 ```
+```
+As a teacher
+So I can kick out naughty students
+I want to be able to remove students from my classes
+```
 
 ### PARTIALLY DONE - need method to view @students array
 ```
@@ -38,11 +43,6 @@ So I can teach lessons
 I want to be asigned to a lesson
 ```
 ```
-As a teacher
-So I can kick out naughty students
-I want to be able to remove students from my classes
-```
-```
 As a headteacher
 So I can stop useless lessons 
 I want to be able to remove classes
@@ -52,6 +52,11 @@ As a student
 So I can improve my knowledge
 I want to gain xp when attending classes
 ```
+
+The code will defend against edge cases such as:
+* Only a registered student can be assigned to classes
+* Only a student in a class can be removed
+* Only one instance of the class can be made
 
 ## Planning
 
