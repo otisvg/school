@@ -1,5 +1,5 @@
 class Clazs
-  attr_reader :students, :lesson, :create
+  attr_reader :students, :lesson
 
   def initialize
     @lesson = {}

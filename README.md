@@ -27,8 +27,6 @@ As a teacher
 So I can kick out naughty students
 I want to be able to remove students from my classes
 ```
-
-### PARTIALLY DONE - need method to view @students array
 ```
 As head teacher
 So I can see students registered at my school

@@ -15,6 +15,10 @@ describe "user stories" do
     expect(school.students.length).to eq 1
   end
 
+  it "adding an unregistered student to a class should raise an error" do
+    expect { school.assign_to_clazs(clazs, subject, student) }.to raise_error("Error: student not registered.")
+  end
+
   context "when a student is registered" do
     before(:each) do
       school.register(student)
@@ -26,8 +30,9 @@ describe "user stories" do
 
     it "students can be asigned to a clazs" do
       school.add_clazs(clazs, subject)
-      school.assign_to_clazs(clazs, subject, student)
-      expect { clazs.lesson.length }.not_to raise_error
+      p school.clazses
+      p school.students
+      expect { school.assign_to_clazs(clazs, subject, student) }.not_to raise_error
     end
 
     it "removes students from a clazs" do
@@ -36,5 +41,6 @@ describe "user stories" do
       school.remove_student(clazs, subject, student) 
       expect(clazs.lesson[:students]).to eq []
     end
+
   end
 end

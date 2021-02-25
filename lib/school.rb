@@ -14,6 +14,8 @@ class School
   end
 
   def assign_to_clazs(clazs, subject, student)
+    raise "Error: student not registered." unless students.include?(student.name)
+
     clazs.add(student, subject)
   end
 

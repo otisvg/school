@@ -6,17 +6,26 @@ describe School do
   let(:name) { "Beca Galliano" }
   let(:student) { double(:student, name: name) }
   let(:school) { described_class.new }
+  let(:subject) { "Maths" }
 
-  describe "#add_clazs" do
-    it "adds a clazs to the school" do
-      expect(clazs).to receive(:create).at_most(1).times
-      school.add_clazs(clazs, "Maths")
+  context "when a student is unregistered" do
+    describe "assign_to_clazs" do
+      it "raises an error if an unregistered student is added to a clazs" do
+        expect { school.assign_to_clazs(clazs, subject, student) }.to raise_error("Error: student not registered.")
+      end
     end
+  
+    describe "#add_clazs" do
+      it "adds a clazs to the school" do
+        expect(clazs).to receive(:create).at_most(1).times
+        school.add_clazs(clazs, subject)
+      end
 
-    it "adds a clazs to the school" do 
-      school.add_clazs(clazs, "Maths")
-      maths = school.clazses.first
-      expect(maths).to eq lesson
+      it "adds a clazs to the school" do 
+        school.add_clazs(clazs, subject)
+        maths = school.clazses.first
+        expect(maths).to eq lesson
+      end
     end
   end
 
