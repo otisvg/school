@@ -24,6 +24,8 @@ class School
   end
 
   def remove_student(clazs, subject, student)
+    raise "Error: #{student.name} is not in this class" unless in_clazs?(subject, student)
+
     clazs.remove(student, subject)
   end
 
@@ -31,5 +33,13 @@ class School
 
   def student?(student)
     students.include?(student.name)
+  end
+
+  def in_clazs?(subject, student)
+    clazses.each do |lesson|
+      if lesson[:subject] == subject
+        return lesson[:students].include?(student)
+      end
+    end
   end
 end

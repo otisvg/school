@@ -30,8 +30,6 @@ describe "user stories" do
 
     it "students can be asigned to a clazs" do
       school.add_clazs(clazs, subject)
-      p school.clazses
-      p school.students
       expect { school.assign_to_clazs(clazs, subject, student) }.not_to raise_error
     end
 
@@ -41,6 +39,5 @@ describe "user stories" do
       school.remove_student(clazs, subject, student) 
       expect(clazs.lesson[:students]).to eq []
     end
-
   end
 end

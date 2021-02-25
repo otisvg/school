@@ -1,8 +1,8 @@
 require "school"
 
 describe School do
-  let(:lesson) { { "Maths" => [] } }
-  let(:clazs) { double(:clazs, create: lesson) }
+  let(:lesson) { { subject: "Maths", students: [] } }
+  let(:clazs) { double(:clazs, create: lesson, remove: student) }
   let(:name) { "Beca Galliano" }
   let(:student) { double(:student, name: name) }
   let(:school) { described_class.new }
@@ -59,6 +59,12 @@ describe School do
       it "removes a student from the clazs" do
         expect(clazs).to receive(:remove).at_most(1).times
         school.remove_student(clazs, subject, student)
+      end
+
+      it "raises an error if the student is not in the clazs" do
+        student2 = Student.new(name: "Otis")
+        school.add_clazs(clazs, subject)
+        expect { school.remove_student(clazs, subject, student2) }.to raise_error("Error: Otis is not in this class")
       end
     end
   end
