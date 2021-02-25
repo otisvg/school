@@ -5,6 +5,10 @@ class School
     @clazses = []
   end
 
+  def view
+    students
+  end
+
   def add_clazs(clazs, subject)
     clazses << clazs.create(subject)
   end
@@ -14,7 +18,7 @@ class School
   end
 
   def assign_to_clazs(clazs, subject, student)
-    raise "Error: student not registered." unless students.include?(student.name)
+    raise "Error: student not registered." unless student?(student)
 
     clazs.add(student, subject)
   end
@@ -23,7 +27,9 @@ class School
     clazs.remove(student, subject)
   end
 
-  def view
-    students
+  private
+
+  def student?(student)
+    students.include?(student.name)
   end
 end
