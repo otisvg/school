@@ -57,7 +57,7 @@ I want to gain xp when attending classes
 
 * After creating the user stories we planned the basic structure of the code, breaking down each user story into classes and methods by extracting the nouns and verbs. For readablilty and to simplify the code we decided to start with 3 classes: School, Student, Clazs.
 
-| Class   | Atributes                       | Methods                                                           |
+| Class   | Attributes                       | Methods                                                           |
 |---------|---------------------------------|-------------------------------------------------------------------|
 | School  | @students = []<br>@clazses = [] | register(student)<br>add_clazs(subject)<br>asign_to_clazs(student |
 | Student | @name<br>@age<br>@xp = 0        |                                                                   |
