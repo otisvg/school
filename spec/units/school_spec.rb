@@ -34,7 +34,7 @@ describe School do
 
     describe "#students" do
       it 'displays a list of students names' do 
-        first_student = school.students.first
+        first_student = school.view.first
         expect(first_student).to eq "Beca Galliano"
       end
     end

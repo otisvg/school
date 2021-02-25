@@ -22,4 +22,8 @@ class School
   def remove_student(clazs, subject, student)
     clazs.remove(student, subject)
   end
+
+  def view
+    students
+  end
 end

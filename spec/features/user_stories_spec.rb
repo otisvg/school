@@ -21,7 +21,7 @@ describe "user stories" do
     end
 
     it 'a headteacher can see a list of students names' do
-      expect(school.students).to eq ["Beca Galliano"]
+      expect(school.view).to eq ["Beca Galliano"]
     end
 
     it "students can be asigned to a clazs" do
