@@ -66,6 +66,11 @@ describe School do
         school.add_clazs(clazs, subject)
         expect { school.remove_student(clazs, subject, student2) }.to raise_error("Error: Otis is not in this class")
       end
+
+      it "raises an error if same instance of a clazs is added to a school" do
+        school.add_clazs(clazs, subject)
+        expect {school.add_clazs(clazs, subject) }. to raise_error("Error: Maths class already exists.")
+      end
     end
   end
 end

@@ -34,6 +34,7 @@ describe "user stories" do
     end
 
     it "removes students from a clazs" do
+      p school.clazses
       school.add_clazs(clazs, subject)
       school.assign_to_clazs(clazs, subject, student)
       school.remove_student(clazs, subject, student) 

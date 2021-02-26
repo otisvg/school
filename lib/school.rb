@@ -10,6 +10,7 @@ class School
   end
 
   def add_clazs(clazs, subject)
+    raise "Error: Maths class already exists." unless in_clazses?(subject)
     clazses << clazs.create(subject)
   end
 
@@ -19,7 +20,6 @@ class School
 
   def assign_to_clazs(clazs, subject, student)
     raise "Error: student not registered." unless student?(student)
-
     clazs.add(student)
   end
 
@@ -37,9 +37,13 @@ class School
 
   def in_clazs?(subject, student)
     clazses.each do |lesson|
-      if lesson[:subject] == subject
-        return lesson[:students].include?(student)
-      end
+      return lesson[:students].include?(student) if lesson[:subject] == subject
+    end
+  end
+
+  def in_clazses?(subject)
+    clazses.select do |lesson|
+      return false if lesson[:subject] == subject 
     end
   end
 end
