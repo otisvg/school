@@ -17,7 +17,7 @@ describe Clazs do
   describe "#add" do
     it "adds a student to the clazs" do
       clazs.create(subject)
-      clazs.add(student, subject)
+      clazs.add(student)
       first_student = clazs.lesson[:students].first
       maths = clazs.lesson[:subject]
       expect(maths).to eq subject
@@ -28,8 +28,8 @@ describe Clazs do
   describe "#remove" do
     it "removes a student from the clazs" do
       clazs.create(subject)
-      clazs.add(student, subject)
-      clazs.remove(student, subject)
+      clazs.add(student)
+      clazs.remove(student)
       empty_clazs = clazs.lesson[:students]
       expect(empty_clazs).to eq []
     end

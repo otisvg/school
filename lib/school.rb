@@ -20,13 +20,13 @@ class School
   def assign_to_clazs(clazs, subject, student)
     raise "Error: student not registered." unless student?(student)
 
-    clazs.add(student, subject)
+    clazs.add(student)
   end
 
   def remove_student(clazs, subject, student)
     raise "Error: #{student.name} is not in this class" unless in_clazs?(subject, student)
 
-    clazs.remove(student, subject)
+    clazs.remove(student)
   end
 
   private
